@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:time_tracker/services/auth_service.dart';
 
 import 'pages/landing_page.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LandingPage(),
+      home: LandingPage(auth: AuthService()),
     );
   }
 }
