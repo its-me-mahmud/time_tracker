@@ -12,13 +12,15 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
-  firebase_auth:
-  firebase_core:
+  firebase_auth: 
+  firebase_core: 
+  flutter_login_facebook:
+  google_sign_in: 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: null
+  pedantic: 
 
 flutter:
   uses-material-design: true

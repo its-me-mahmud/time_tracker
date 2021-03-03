@@ -10,6 +10,22 @@ class SignInPage extends StatelessWidget {
 
   final AuthBase auth;
 
+  Future<void> _signInWithGoogle() async {
+    try {
+      await auth.signInWithGoogle();
+    } catch (e) {
+      print(e.toString);
+    }
+  }
+
+  Future<void> _signInWithFacebook() async {
+    try {
+      await auth.signInWithFacebook();
+    } catch (e) {
+      print(e.toString);
+    }
+  }
+
   Future<void> _signInAnonymously() async {
     try {
       await auth.signInAnonymously();
@@ -47,13 +63,13 @@ class SignInPage extends StatelessWidget {
           ),
           const SizedBox(height: 48),
           SocialSignInButton(
-            onPressed: () {},
+            onPressed: _signInWithGoogle,
             assetPath: 'assets/images/google-logo.png',
             text: 'Sign in with Google',
           ),
           const SizedBox(height: 8),
           SocialSignInButton(
-            onPressed: () {},
+            onPressed: _signInWithFacebook,
             assetPath: 'assets/images/facebook-logo.png',
             text: 'Sign in with Facebook',
             color: Color(0xFF443D92),
