@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:time_tracker/services/auth_service.dart';
 
 import 'widgets/sign_in_button.dart';
 import 'widgets/social_sign_in_button.dart';
 
 class SignInPage extends StatelessWidget {
-  const SignInPage({@required this.auth});
+  const SignInPage({required this.auth});
 
   final AuthBase auth;
 

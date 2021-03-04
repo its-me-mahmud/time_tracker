@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:time_tracker/widgets/custom_raised_button.dart';
+import 'package:time_tracker/widgets/custom_elevated_button.dart';
 
-class SocialSignInButton extends CustomRaisedButton {
+class SocialSignInButton extends CustomElevatedButton {
   SocialSignInButton({
-    @required String assetPath,
-    String text,
-    Color color,
-    Color textColor,
-    @required VoidCallback onPressed,
+    required String assetPath,
+    required String text,
+    Color? color,
+    Color? textColor,
+    required VoidCallback onPressed,
   }) : super(
           onPressed: onPressed,
           color: color,

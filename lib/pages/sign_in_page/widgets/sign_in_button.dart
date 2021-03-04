@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:time_tracker/widgets/custom_raised_button.dart';
+import 'package:time_tracker/widgets/custom_elevated_button.dart';
 
-class SignInButton extends CustomRaisedButton {
+class SignInButton extends CustomElevatedButton {
   SignInButton({
-    String text,
-    Color color,
-    Color textColor,
-    VoidCallback onPressed,
+    required String text,
+    Color? color,
+    Color? textColor,
+    VoidCallback? onPressed,
   }) : super(
           onPressed: onPressed,
           color: color,

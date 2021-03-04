@@ -6,35 +6,24 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.0
-  firebase_auth: 
-  firebase_core: 
-  flutter_login_facebook:
-  google_sign_in: 
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^1.0.0
+  firebase_core: ^1.0.0
+  flutter_login_facebook: ^1.0.0-nullsafety.1
+  google_sign_in: ^5.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: 
+  pedantic: ^1.11.0
 
 flutter:
   uses-material-design: true
 
   assets:
     - assets/images/
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700

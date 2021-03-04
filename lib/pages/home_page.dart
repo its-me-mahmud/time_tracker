@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:time_tracker/services/auth_service.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({@required this.auth});
+  const HomePage({required this.auth});
 
   final AuthBase auth;
 
@@ -21,7 +20,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Page'),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: _signOut,
             child: const Text(
               'Sign Out',
