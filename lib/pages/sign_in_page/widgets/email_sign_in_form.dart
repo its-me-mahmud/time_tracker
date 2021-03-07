@@ -1,8 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker/services/auth_service.dart';
 import 'package:time_tracker/utils/validator.dart';
-import 'package:time_tracker/widgets/show_alert_dialog.dart';
+import 'package:time_tracker/widgets/show_exception_alert_dialog.dart';
 
 import 'form_submit_button.dart';
 
@@ -26,6 +27,15 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
   String get _email => _emailController.text;
   String get _password => _passwordController.text;
 
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _emailFocusNode.dispose();
+    _passwordFocusNode.dispose();
+  }
+
   void _submit() async {
     setState(() {
       _submitted = true;
@@ -39,12 +49,11 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
         await auth.createUserWithEmailAndPassword(_email, _password);
       }
       Navigator.pop(context);
-    } catch (e) {
-      await showAlertDialog(
+    } on FirebaseAuthException catch (e) {
+      await showExceptionAlertDialog(
         context: context,
         title: 'Sign In Failed',
-        content: e.toString(),
-        defaultActionText: 'Ok',
+        exception: e,
       );
     } finally {
       setState(() {
