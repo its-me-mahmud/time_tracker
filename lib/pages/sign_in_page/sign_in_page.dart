@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tracker/pages/sign_in_page/sign_in_blocs/sign_in_bloc.dart';
 import 'package:time_tracker/services/auth_service.dart';
 import 'package:time_tracker/widgets/show_exception_alert_dialog.dart';
 
+import 'blocs/sign_in_bloc.dart';
 import 'email_sign_in_page.dart';
 import 'widgets/sign_in_button.dart';
 import 'widgets/social_sign_in_button.dart';
@@ -18,7 +18,7 @@ class SignInPage extends StatelessWidget {
     final auth = Provider.of<AuthBase>(context, listen: false);
     return Provider<SignInBloc>(
       create: (_) => SignInBloc(auth: auth),
-      dispose: (context, bloc) => bloc.dispose(),
+      dispose: (_, bloc) => bloc.dispose(),
       child: Consumer<SignInBloc>(
         builder: (_, bloc, __) => SignInPage(bloc: bloc),
       ),
