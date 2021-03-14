@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tracker/services/auth_service.dart';
-import 'package:time_tracker/widgets/show_alert_dialog.dart';
+import 'package:time_tracker/common_widgets/show_alert_dialog.dart';
+import 'package:time_tracker/services/auth.dart';
 
 class HomePage extends StatelessWidget {
   Future<void> _signOut(BuildContext context) async {

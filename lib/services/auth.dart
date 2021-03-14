@@ -20,7 +20,7 @@ abstract class AuthBase {
   Future<void> signOut();
 }
 
-class AuthService implements AuthBase {
+class Auth implements AuthBase {
   final _firebaseAuth = FirebaseAuth.instance;
 
   @override
