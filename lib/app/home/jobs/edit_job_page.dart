@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:time_tracker/app/home/models/job.dart';
 import 'package:time_tracker/common_widgets/show_alert_dialog.dart';
 import 'package:time_tracker/common_widgets/show_exception_alert_dialog.dart';
@@ -12,12 +11,15 @@ class EditJobPage extends StatefulWidget {
   final Database database;
   final Job? job;
 
-  static Future<void> show(BuildContext context, {Job? job}) async {
-    final database = Provider.of<Database>(context, listen: false);
+  static Future<void> show(
+    BuildContext context, {
+    Database? database,
+    Job? job,
+  }) async {
     await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => EditJobPage(database: database, job: job),
+        builder: (context) => EditJobPage(database: database!, job: job),
         fullscreenDialog: true,
       ),
     );
